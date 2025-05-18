@@ -4,7 +4,8 @@ using namespace std;
 int merge(int arr[],int si,int mid,int ei){
     int i=si;
     int j=mid+1;
-    vector<int>temp;
+    vector<int>temp;                                 //   TC=O(nlog n)
+                                                    //    SC+O(n)
     while(i<=mid&&j<=ei){
         if(arr[i]<arr[j]){
             temp.push_back(arr[i++]);
