@@ -8,7 +8,7 @@ void printList(list<int>ll){
     for(itr=ll.begin();itr!=ll.end();itr++){
         cout<<(*itr)<<" -> ";
     }cout<<"NULL"<<"\n";
-
+               
 }
 int main(){
     list<int>ll;
