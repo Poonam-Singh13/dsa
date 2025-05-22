@@ -8,7 +8,7 @@ int main()
         cin>>n;
         fib(n);
         return 0;
-    }
+    }         
     void fib(int n)
     {
         int a=0,b=1,c;
