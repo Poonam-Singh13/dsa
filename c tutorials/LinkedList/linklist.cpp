@@ -32,7 +32,7 @@ public:
             head=NULL; 
         }
     }
-    void push_front(int val){
+    void push_front(int val){  /// pushfront in linked list
         Node* newNode=new Node(val);
         if(head==NULL){
             head=tail=newNode;
@@ -41,7 +41,7 @@ public:
             head=newNode;
         }
     }
-    void push_back(int val){
+    void push_back(int val){    /// pushback in linked list
         Node* newNode=new Node(val);
         if(head==NULL){
             head=tail=newNode;
