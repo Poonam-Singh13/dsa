@@ -50,7 +50,7 @@ public:
             tail=newNode;
         }
     }
-    void insert(int val,int pos){
+    void insert(int val,int pos){    //insert in Linked list
         Node* newNode=new Node(val);
         Node* temp=head;
         for(int i=0;i<pos-1;i++){
