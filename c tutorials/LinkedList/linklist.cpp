@@ -63,7 +63,7 @@ public:
         newNode->next=temp->next;
         temp->next=newNode;
     }
-    void pop_front(){
+    void pop_front(){          // delete element from the front
         Node* temp=head;
         if(head==NULL){
         cout<<"ll is empty \n";
@@ -73,7 +73,7 @@ public:
             delete temp;
         }
     }
-    void pop_back(){
+    void pop_back(){        // delete element from the back
         Node*temp=head;
         while(temp->next->next!=NULL){
             temp=temp->next;
