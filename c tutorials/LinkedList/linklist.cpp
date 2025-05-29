@@ -114,7 +114,7 @@ public:
     int searchRec(int key){
         return helper(head,key);
     }
-    void reverse(){
+    void reverse(){             // reverse a linked list
         Node* curr=head;
         Node* prev=NULL;
         //tail=head;
