@@ -70,7 +70,7 @@ class List{
             return false;
 
     }
-    void removeCycle(Node* head){
+    void removeCycle(Node* head){         // remove a cycle in LL
         Node*slow=head;
         Node* fast=head;
         bool isCycle=false;
