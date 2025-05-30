@@ -48,7 +48,7 @@ class List{
             tail=newNode;
         }
     }
-    Node* splitAtMid(Node*head){
+    Node* splitAtMid(Node*head){          // split At Mid
          if (head == NULL || head->next == NULL) return head;
 
         Node* slow=head;
