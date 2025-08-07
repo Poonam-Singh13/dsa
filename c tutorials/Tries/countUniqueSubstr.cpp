@@ -1,0 +1,68 @@
+#include<iostream>
+#include<unordered_map>
+#include<string>
+#include<vector>
+using namespace std;
+class Node{
+    public:
+    unordered_map<char,Node*>children;
+    bool endOfWord;
+    Node(){
+        endOfWord=false;
+    }
+};
+class Tries{
+    public:
+    Node*root;
+    Tries(){
+        root=new Node();
+    }
+    void insert(string key){
+        Node*temp=root;
+        for(int i=0;i<key.size();i++){
+            if(temp->children[key[i]]==NULL){
+                temp->children[key[i]]=new Node();
+            }
+            temp=temp->children[key[i]];
+        }
+        temp->endOfWord=true;
+    }
+    bool search(string key){
+        Node*temp=root;
+        for(int i=0;i<key.size();i++){
+            if(temp->children.count(key[i])){
+                temp=temp->children[key[i]];
+            }else{
+                return false;
+            }
+        }
+        return temp->endOfWord;
+    }
+    int count(Node*root){
+        int ans=0;
+        for(pair<char,Node*>child:root->children){
+            ans+=count(child.second);
+        }
+        return ans+1;
+    }
+};
+
+int countUniqueSubstr(string str){
+    //find suffix
+    Tries trie;
+    for(int i=0;i<str.size();i++){
+        string suffix=str.substr(i);
+        trie.insert(suffix);
+    }
+   return trie.count(trie.root); // Pass the root node
+}
+int main(){
+   // vector<string>words={"the","there","their","a","any","thee"};
+    Tries tries;
+    // for(int i=0;i<words.size();i++){
+    //     tries.insert(words[i]);
+    // }
+   // cout<<tries.search("poonam");
+   string str="ababa";
+   cout<<countUniqueSubstr(str);
+}
